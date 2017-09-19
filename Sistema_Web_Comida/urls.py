@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from Sistema_Web_Comida.view import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^hola/[1:3]$', hola),
 ]
