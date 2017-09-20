@@ -1,5 +1,11 @@
 from django.http import Http404, HttpResponse
+from django.template.loader import get_template
+from django.template import Context, loader
+from django.shortcuts import render
+#from django.template.base.Template import *
 import datetime
+import os.path
+
 def hola(request):
     return HttpResponse("Hola mundo")
 
@@ -14,8 +20,9 @@ def devuelveHoraAdelanta(request, offset):
     except:
         raise Http404()
     dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
-    html = "<html><body>%s - - - %s</body></html>"%(offset, dt)
-    return HttpResponse(html)
+    return render(request, 'hora.html', {'hora': '1'})
+
+    #return HttpResponse(html)
 
 
 
