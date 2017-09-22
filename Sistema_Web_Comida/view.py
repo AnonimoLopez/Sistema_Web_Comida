@@ -1,10 +1,7 @@
 from django.http import Http404, HttpResponse
-from django.template.loader import get_template
-from django.template import Context, loader
 from django.shortcuts import render
-#from django.template.base.Template import *
 import datetime
-import os.path
+
 
 def hola(request):
     return HttpResponse("Hola mundo")
@@ -25,4 +22,5 @@ def devuelveHoraAdelanta(request, offset):
     #return HttpResponse(html)
 
 
-
+def login(request):
+    return render(request, 'index.html')
